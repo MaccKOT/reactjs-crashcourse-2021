@@ -1,10 +1,10 @@
-function App() {
-  const name = 'User';
+import Header from './components/Header';
 
+function App() {
   return (
-    <>
-      <h1>Hello, {name}</h1>
-    </>
+    <div className='container'>
+      <Header />
+    </div>
   );
 }
 
