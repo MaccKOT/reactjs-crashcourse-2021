@@ -8,26 +8,29 @@ function App() {
   const [showAddTask, setShowAddTask] = useState(false);
 
   //our state is immutable
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      text: 'Task 1',
-      day: 'Feb 5th at 2:30pm',
-      reminder: true,
-    },
-    {
-      id: 2,
-      text: 'Task 2',
-      day: 'Feb 5th at 2:30pm',
-      reminder: true,
-    },
-    {
-      id: 3,
-      text: 'Task 3',
-      day: 'Feb 5th at 2:30pm',
-      reminder: false,
-    },
-  ]);
+  //state mockup now in json database, so we dont need thath in code
+  // const [tasks, setTasks] = useState([
+  //   {
+  //     id: 1,
+  //     text: 'Task 1',
+  //     day: 'Feb 5th at 2:30pm',
+  //     reminder: true,
+  //   },
+  //   {
+  //     id: 2,
+  //     text: 'Task 2',
+  //     day: 'Feb 5th at 2:30pm',
+  //     reminder: true,
+  //   },
+  //   {
+  //     id: 3,
+  //     text: 'Task 3',
+  //     day: 'Feb 5th at 2:30pm',
+  //     reminder: false,
+  //   },
+  // ]);
+
+  const [tasks, setTasks] = useState([]);
 
   //Add task
   const addTask = (task) => {
