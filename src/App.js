@@ -1,7 +1,7 @@
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   //Add task form toogle. Default is hidden.
@@ -31,6 +31,23 @@ function App() {
   // ]);
 
   const [tasks, setTasks] = useState([]);
+
+  //load state
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks();
+      setTasks(tasksFromServer);
+    };
+
+    getTasks(); //we need this, becase fetch is async function
+  }, []);
+
+  //Fetch tasks
+  const fetchTasks = async () => {
+    const res = await fetch('http://localhost:5000/tasks');
+    const data = await res.json();
+    return data;
+  };
 
   //Add task
   const addTask = (task) => {
